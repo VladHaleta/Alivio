@@ -49,6 +49,9 @@ a {
 /* HEADER*/
 
 .header{
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -60,6 +63,14 @@ a {
 
     color: #292929;
 
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+
+    color: #01996D;
 }
 
 .header-navigation {
@@ -113,6 +124,36 @@ a:hover {
     margin-left: 0;
 }
 
+.btn-burger {
+    border-color: #fff;
+}
+
+/* BURGER-MENU*/
+
+.burger-tgl {
+    display: none;
+}
+
+.header-navigation-burger, .header--item-burger  {
+    position: absolute;
+    right: 0;
+    top: 85px;
+    z-index: 2;
+    
+    display: flex !important;
+    flex-direction: column;
+
+    width: 200px;
+    padding: 5px;
+
+    background-color: #01996D;
+}
+
+
+.header--item-burger {
+    right: 0;
+    top: 185px; 
+}
 
 /* INTRO*/
 
@@ -142,7 +183,7 @@ a:hover {
     font-size: 65px;
     font-weight: bold;
     line-height: 1.15;
-    font-family: Georgia;
+    font-family: "Georgia", sans-serif;
 
     color: #01996D;
 }
@@ -437,25 +478,22 @@ a:hover {
 
 .footer {
     width: 100%;
+    padding: 20px;
 
     background-color: #245852;
 }
 
 .footer--item {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-
-    min-height: 324px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
     font-size: 25px;
     color: #ffffff;   
 } 
 
 .footer-logo {
-    margin: 110px 0 30px;
-
     font-size: 45px;
     font-weight: 600;
 }
@@ -464,9 +502,7 @@ a:hover {
     margin: 30px 0 30px;
 }
 
-.footer-nav:last-child {
-    margin-bottom: 90px;
-}
+
 
 .footer-link {
     color: #fff;
@@ -506,6 +542,16 @@ a:hover {
     .header-navigation {
         display: none;
     }
+
+    .header--item {
+        display: none;
+    }
+
+     /*BURGER_MENU*/
+    .burger-tgl {
+        display: block;
+        padding: 10px 30px;
+    }
     
     /*MAIN*/
     .main {
@@ -520,6 +566,7 @@ a:hover {
         padding: 0;
     }
 
+    /*REVIEWS*/
     .reviews-title {
         font-size: 30px;
     }
@@ -527,5 +574,84 @@ a:hover {
     .reviews-video {
         margin: 100px auto 100px;
     }
+
+    /*PERSONALIZED*/
+
+    .personalized {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    }
     
+    .personalized--item {
+        width: 100%;
+        text-align: center;
+    }
+
+
+}
+
+@media ( max-width: 771px) {
+
+    .header--item .btn {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        text-align: center;
+    }
+
+    .reviews-flex {
+        flex-direction: column;
+
+        text-align: center;
+    }
+    
+    .reviews--item:first-child {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .reviews--item {
+        width: 100%;
+    }
+
+    .reviews-title {
+        margin-top: 30px;
+    }
+
+    .reviews-video {
+        margin: 30px auto;
+    }
+
+    .personalized-card {
+        display: none;
+    }
+    
+    .personalized-title {
+        font-size: 40px;
+    }
+
+    .footer--item {
+        flex-direction: column;
+    }
+}
+
+@media ( max-width: 331px) {
+    
+    .burger-tgl {
+        padding: 10px 30px;
+    }
+
 }
